@@ -53,7 +53,7 @@ $app->post('/test', function (Request $request, Response $response)
     }
     
 );
-    $group->post('[/]',  . );
+    $group->post('[/]',  );
   }
   )->add(new SalidaMiddleWare())->add(new EntradaMiddleWare());
 
