@@ -40,7 +40,7 @@ $app->post('[/]', function (Request $request, Response $response)
 
 $app->post('/test', function (Request $request, Response $response) 
 {    
-    $payload = json_encode(array('method' => 'POST', 'msg' => "Bienvenido a SlimFramework 2023"));
+    $payload = json_encode(array('method' => 'POST', 'msg' => "Bienvenido a SlimFramework 2023 POST"));
     $response->getBody()->write($payload);
     return $response->withHeader('Content-Type', 'application/json');
 }
