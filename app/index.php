@@ -24,7 +24,7 @@ $app->addBodyParsingMiddleware();
 // Routes
 $app->get('[/]', function (Request $request, Response $response) 
 {    
-    $payload = json_encode(array('method' => 'GET', 'msg' => "Bienvenido a SlimFramework 2023 get"));
+    $payload = json_encode(array('method' => 'GET', 'msg' => "Bienvenido a SlimFramework 2023"));
     $response->getBody()->write($payload);
     return $response->withHeader('Content-Type', 'application/json');
 }
@@ -32,7 +32,7 @@ $app->get('[/]', function (Request $request, Response $response)
 
 $app->post('[/]', function (Request $request, Response $response) 
 {    
-    $payload = json_encode(array('method' => 'POST', 'msg' => "Bienvenido a SlimFramework 2023 POST"));
+    $payload = json_encode(array('method' => 'POST', 'msg' => "Bienvenido a SlimFramework 2023"));
     $response->getBody()->write($payload);
     return $response->withHeader('Content-Type', 'application/json');
 }
@@ -40,7 +40,7 @@ $app->post('[/]', function (Request $request, Response $response)
 
 $app->post('/test', function (Request $request, Response $response) 
 {    
-    $payload = json_encode(array('method' => 'POST', 'msg' => "Bienvenido a SlimFramework 2023 POST"));
+    $payload = json_encode(array('method' => 'POST', 'msg' => "Bienvenido a SlimFramework 2023"));
     $response->getBody()->write($payload);
     return $response->withHeader('Content-Type', 'application/json');
 }
