@@ -8,10 +8,12 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Slim\Routing\RouteCollectorProxy;
 
-require __DIR__ . '../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 // Instantiate App
 $app = AppFactory::create();
+
+$app->setBasePath('/../app');
 
 // Add error middleware
 $app->addErrorMiddleware(true, true, true);
@@ -30,7 +32,7 @@ $app->get('[/]', function (Request $request, Response $response)
 
 $app->post('[/]', function (Request $request, Response $response) 
 {    
-    $payload = json_encode(array('method' => 'POST', 'msg' => "Bienvenido a SlimFramework 2023"));
+    $payload = json_encode(array('method' => 'POST', 'msg' => "Bienvenido a SlimFramework 2023 POST"));
     $response->getBody()->write($payload);
     return $response->withHeader('Content-Type', 'application/json');
 }
@@ -50,9 +52,7 @@ $app->post('/test', function (Request $request, Response $response)
     $group->get('[/]', function (Request $request, Response $response)
     {
         $payload = json_encode(array('mensaje' => "SlimFramework 2023"));
-    }
-    
-);
+    });
     $group->post('[/]', );
   }
   )->add(new SalidaMiddleWare())->add(new EntradaMiddleWare());
