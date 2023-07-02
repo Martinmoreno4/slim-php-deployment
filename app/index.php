@@ -14,7 +14,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $app = AppFactory::create();
 
 // Set base path
-$app->setBasePath('/app');
+//$app->setBasePath('/app');
 
 // Add error middleware
 $app->addErrorMiddleware(true, true, true);
